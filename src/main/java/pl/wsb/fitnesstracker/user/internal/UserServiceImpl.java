@@ -3,6 +3,7 @@ package pl.wsb.fitnesstracker.user.internal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import pl.wsb.fitnesstracker.user.api.User;
+import pl.wsb.fitnesstracker.user.api.UserDto;
 import pl.wsb.fitnesstracker.user.api.UserProvider;
 import pl.wsb.fitnesstracker.user.api.UserService;
 
@@ -33,13 +34,28 @@ class UserServiceImpl implements UserService, UserProvider {
     }
 
     @Override
-    public Optional<User> getUserByEmail(final String email) {
+    public List<User> getUsersByEmail(final String email) {
         return userRepository.findByEmail(email);
     }
 
     @Override
     public List<User> findAllUsers() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        this.userRepository.deleteById(id);
+    }
+
+    @Override
+    public List<User> findUsersOlderThan(int age) {
+        return this.userRepository.findUsersOlderThan(age);
+    }
+
+    @Override
+    public User saveUser(User user) {
+        return userRepository.save(user);
     }
 
 }
