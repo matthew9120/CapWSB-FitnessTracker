@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "52633282-5abb-433f-976b-7080f291e803",
+		"name": "Trainings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50794182",
+		"_collection_link": "https://wrx71630-2499847.postman.co/workspace/Mateusz-Prostak's-Workspace~d3760633-6766-4531-84a3-f994f4eec3d3/collection/50794182-52633282-5abb-433f-976b-7080f291e803?action=share&source=collection_link&creator=50794182"
+	},
+	"item": [
+		{
+			"name": "Getting all trainings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/trainings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"trainings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getting trainings by user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
