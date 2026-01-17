@@ -7,6 +7,7 @@ import pl.wsb.fitnesstracker.training.api.TrainingProvider;
 import pl.wsb.fitnesstracker.training.api.TrainingRepository;
 import pl.wsb.fitnesstracker.user.api.User;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +33,11 @@ public class TrainingServiceImpl implements TrainingProvider {
 
     public List<Training> findAllTrainingsByUser(Optional<User> user) {
         return trainingRepository.findAllTrainingsByUser(user);
+    }
+
+    public List<Training> findTrainingsByUserForLastWeek(User user) {
+        LocalDateTime sevenDaysAgo = LocalDateTime.now().minusWeeks(1);
+        return trainingRepository.findTrainingsByUserForLastWeek(user, sevenDaysAgo);
     }
 
 
