@@ -43,7 +43,7 @@ public class ReportScheduler {
 
             output.append(")");
 
-            emailSender.send(user.getEmail(), "Raport", output.toString());
+            emailSender.send(user.getEmail(), "Raport " + user.getFirstName() + " " + user.getLastName(), output.toString());
         }
     }
 }
